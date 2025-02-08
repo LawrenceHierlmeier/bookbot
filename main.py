@@ -1,11 +1,12 @@
 def main():
-    book_path = "books/frankenstein.txt"
+    book_path = input("Eneter relative path to book: ")
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     character_count_dict = get_character_count(text.lower())
     aggregate_book_data(book_path, num_words, character_count_dict)
 
-# takes in a file_path to a books plain text and returns the read text file
+
+# takes in a file path to a books plain text and returns the read text file
 def get_book_text(path):
     with open("books/frankenstein.txt") as f:
         return f.read()
@@ -26,7 +27,8 @@ def get_character_count(text):
 
     return character_count
 
-
+# takes the file path to the book, word count of the plain text, and the char count dict and
+# generates a clean report 
 def aggregate_book_data(book, num_words, char_count_dict):
     alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     print(f"--- Begin report of {book} ---")
